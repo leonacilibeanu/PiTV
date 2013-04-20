@@ -1,5 +1,18 @@
+Proiect: PiTV
 
 Proiectul nostru consta in construirea unui stream TV.
 In acest scop, Raspberry Pi va fi folosit drept server. 
 Pe acesta va rula la un moment dat un film, si in timpul redarii acestuia se 
 pot conecta mai multi clienti pentru a vedea filmul in timp real.
+
+Componenta echipa: 
+Cilibeanu Leona Camelia
+Niculaescu Oana Georgiana
+Patrascoiu Andrei Radu
+Caciur Cristina-Adriana
+
+Categorie:
+Software
+
+Link github:
+https://github.com/leonacilibeanu/PiTV
