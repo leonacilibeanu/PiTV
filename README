@@ -1,5 +1,32 @@
+PiTV
+
+Componenta:
+Caciur Cristina Adriana
+Cilibeanu Leona Camelia
+Niculaescu Oana Georgiana
+Patrascoiu Andrei Radu
+
+
+Categorie:
+Best Software
+
 
 Proiectul nostru consta in construirea unui stream TV.
 In acest scop, Raspberry Pi va fi folosit drept server. 
-Pe acesta va rula la un moment dat un film, si in timpul redarii acestuia se 
-pot conecta mai multi clienti pentru a vedea filmul in timp real.
+Pe acesta va rula la un moment dat doua filme, si in timpul redarii acestora se 
+pot conecta mai multi clienti pentru a vedea unui din filme in timp real.
+
+
+Format de intrare
+
+Pentru rularea programului, este nevoie de o conversie anterioara a fisierului
+video in format .wmv si o trunchiere a acestuia in fisiere de durata egala, 
+de preferabil o durata cat mai mica (3 - 5 secunde / video).
+
+Exemplu rulare:
+
+./server
+
+./client <ip_address> <port_number> <0 / 1>
+
+Observatie: Ultimul parametru din comanda clientului reprezinta filmul ales.
