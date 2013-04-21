@@ -1,5 +1,5 @@
 client: client.c
-	gcc -o $@ $^
+	gcc -Wall -o $@ $^
 	
 clean:
 	rm client
