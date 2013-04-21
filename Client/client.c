@@ -15,11 +15,12 @@
 int main(int argc, char *argv[])
 {
 	
-      int sockfd, newsockfd, portno, cont = 1, serverfd;
-      char nume[50], buf[BUFLEN], buf1[BUFLEN], buf2[BUFLEN];
+      int sockfd, newsockfd, portno, cont = 1, serverfd, pid;
+      char nume[50], buf[BUFLEN], buf1[BUFLEN];
       struct sockaddr_in serv_addr, cli_addr, my_addr;
       int n, i, j, k, dim_fis, ok;
       long dim;
+      char *args[3];
       
       int f, f1, f2;
       int fdmax;
@@ -44,7 +45,7 @@ int main(int argc, char *argv[])
 	    if (connect(serverfd,(struct sockaddr*) &serv_addr,sizeof(serv_addr)) < 0) 
 		    error("Eroare la conectare");
 		
-	    if ((k = recv(serverfd, buf, BUFLEN, 0)) <= 0)
+	   /* if ((k = recv(serverfd, buf, BUFLEN, 0)) <= 0)
 		      printf("S-a inchis serverul vietii!!!!\n");
 
 		  i = 0;
@@ -72,8 +73,25 @@ int main(int argc, char *argv[])
 				i += k;
 		  }
 			
-		  close(f1);
+		  close(f1);*/
       f_num = (f_num + 1) % 2;
+      
+      pid = fork();
+      
+      if (pid < 0)
+        exit(1);
+      
+      if (pid == 0) {
+      
+        printf("forked\n");
+        args[0] = "/bin/bash";
+        args[1] = "play.sh";
+        args[2] = NULL;
+        execvp("/bin/bash", args);
+        printf("err\n");
+        exit(1);
+      
+      }
 	    
 	    while (1) {
 	    
@@ -93,12 +111,12 @@ int main(int argc, char *argv[])
         i = 0;
         
 		    while (i < dim) {
-		      k = recv(serverfd, buf, BUFLEN, 0);
+		      k = recv(serverfd, buf1, BUFLEN, 0);
           
 		      if (k <= 0)
 		        exit(1);
 				
-			    n = write(f1, buf, k);
+			    n = write(f1, buf1, k);
           
 			    if (n < 0)
 				    exit(1);
@@ -106,6 +124,7 @@ int main(int argc, char *argv[])
 				  i += k;
 		    }
       
+        printf("done\n");
         close(f1);
         f_num = (f_num + 1) % 2;
     }
