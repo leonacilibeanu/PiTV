@@ -1,13 +1,4 @@
-/*
- * epoll-based echo server. Uses epoll(7) to multiplex connections.
- *
- * TODO:
- *  - block data receiving when receive buffer is full (use circular buffers)
- *  - do not copy receive buffer into send buffer when send buffer data is
- *      still valid
- *
- * 2011, Operating Systems
- */
+
 
 #include <stdio.h>
 #include <stdlib.h>

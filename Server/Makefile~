@@ -1,16 +1,14 @@
 CC = gcc
 CFLAGS = -Wall
 
-build: aws
+build: server
 
-aws: main.o sock_util.o http_parser.o
-	$(CC) $(CFLAGS) $^ -o $@ -laio
+server: main.o sock_util.o
+	$(CC) $(CFLAGS) $^ -o $@ -laio -lrt
 
 main.o: main.c
 
 sock_util.o: sock_util.c
 
-http_parser.o: http_parser.c
-
 clean:
-	rm *.o aws
+	rm *.o server

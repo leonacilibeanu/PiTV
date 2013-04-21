@@ -1,8 +1,4 @@
-/*
- * epoll wrapper functions
- *
- * 2011, Operating Systems
- */
+
 
 #ifndef W_EPOLL_H_
 #define W_EPOLL_H_	1

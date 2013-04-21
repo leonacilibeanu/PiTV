@@ -1,8 +1,4 @@
-/*
- * useful structures/macros
- *
- * 2011, Operating Systems
- */
+
 
 
 #include <stdio.h>

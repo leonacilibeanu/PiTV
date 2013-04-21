@@ -4,7 +4,7 @@ CFLAGS = -Wall
 build: server
 
 server: main.o sock_util.o
-	$(CC) $(CFLAGS) $^ -o $@ -laio -lrt
+	$(CC) $(CFLAGS) $^ -o $@ -lrt
 
 main.o: main.c
 

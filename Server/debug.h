@@ -1,15 +1,4 @@
-/*
- * debugging macros
- *    heavily inspired by previous work and Internet resources
- *
- * uses C99 variadic macros
- * uses non-standard usage of the token-paste operator (##) for
- *   removing the comma symbol (,) when not followed by a token
- * uses non-standard __FUNCTION__ macro (MSVC doesn't support __func__)
- * tested on gcc 4.4.5 and Visual Studio 2008 (9.0), compiler version 15.00
- *
- * 2011, Razvan Deaconescu, razvan.deaconescu@cs.pub.ro
- */
+
 
 #ifndef DEBUG_H_
 #define DEBUG_H_	1
